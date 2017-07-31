@@ -13,8 +13,6 @@ export default class ImageButton extends Component {
     this.state = {
       image: this.props.appearance.normal
     };
-    console.log ("This is an image")
-    console.log ( this.state.image);
   }
 
   onTouchStart() {
