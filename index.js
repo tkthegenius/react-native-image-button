@@ -1,4 +1,3 @@
-'use strict';
 
 import React, { Component } from 'react';
 import {
@@ -14,6 +13,8 @@ export default class ImageButton extends Component {
     this.state = {
       image: this.props.appearance.normal
     };
+    console.log ("This is an image")
+    console.log ( this.state.image);
   }
 
   onTouchStart() {
@@ -52,16 +53,8 @@ export default class ImageButton extends Component {
             onResponderRelease={ this.onTouchEnd.bind(this) }
             onResponderTerminate={ this.onTouchCancel.bind(this) }
             onResponderReject={ this.onTouchCancel.bind(this) }>
-        <Image style={ styles.image } source={ this.state.image } resizeMode="stretch" />
+        <Image style={ this.props.style } source={ this.state.image } />
       </View>
     );
   }
 }
-
-let styles = StyleSheet.create({
-  image: {
-    flex: 1,
-    width: null,
-    height: null
-  }
-});
